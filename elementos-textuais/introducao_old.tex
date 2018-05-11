@@ -1,0 +1,77 @@
+ \chapter{Introdução}
+\label{cap:introducao}
+    
+    
+
+    O objetivo deste trabalho é conceber uma abordagem computacional inteligente capaz de contribuir com a concepção, nas etapas de projeto e de avaliação de desempenho, de programas de agentes racionais artificiais que compõem sistemas sociotécnicos. Sistemas sociotécnicos são sistemas distribuídos que envolvem interações complexas entre pessoas, máquinas e software, concebidos para realizar objetivos de interesse dos usuários do sistema em ambientes de tarefa difíceis. Nesta etapa, o projeto focará nos programas de agentes artificiais em sistemas sócio-técnicos que ocorrem na área de Inteligência Ambiental (\acrshort{ami}) e que são concebidos concretamente a partir do conjunto de tecnologias que implementam o paradigma de Internet das Coisas (\acrshort{iot}).
+
+    Mais especificamente, um sistema de Inteligência Ambiental sócio-técnico é formado por um conjunto de dispositivos sensores e atuadores, artefatos computacionais, serviços e aplicações de software que, de maneira não intrusiva, percebem informações de seu ambiente de tarefa, e as utilizam para selecionar ações a ser executadas e interagem com os usuários e determinados objetos físicos no ambiente de forma inteligente, isto é, buscando realizar os objetivos dos usuários para os quais o sistema foi concebido. Nas aplicações de sistemas \acrshort{ami} o usuário é a entidade central do modelo.
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   SE POSSIVEL RESUMIR   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    Com a popularização da internet, houve um impulso para o surgimento e a inserção de sistemas de \acrshort{ami} através de vários dispositivos equipados com uma interface para conexão. Atualmente, estes dispositivos e outros objetos físicos que fazem parte do cotidiano das pessoas podem ser conectados à Internet visando implementar sistemas \acrshort{ami} que simplifiquem a vida destas pessoas de diversas maneiras. A popularidade deste tipo de implementação contribuiu para o surgimento do paradigma de Internet das Coisas. Neste trabalho, estes sistemas sócio-técnicos de Inteligência Ambiental com Internet das Coisas são representados pela sigla \acrshort{amiiot}.
+    
+    Além das pessoas, processos e dados, bilhões de dispositivos já estão conectados à Internet, incluindo: dispositivos móveis como \textit{smartphones} e \textit{tablets}, PCs desktop e laptop, impressoras, TVs inteligentes, carros, geladeiras e lâmpadas inteligentes. Mesmo aqueles objetos físicos (coisas) que não estão equipados com uma interface de conexão podem ser integrados em um sistema \acrshort{amiiot} empregando-se plataformas de hardware como, por exemplo, Arduino, .NET Gadgeteer, ou mesmo Lego Mindstorms para as crianças.
+
+    As tecnologias nos sistemas sócio-técnicos \acrshort{amiiot} estão integradas com as pessoas. Por exemplo, uma pessoa pode ligar o ar condicionado em sua casa remotamente empregando um \textit{smartphone}, visando obter uma temperatura agradável ao chegar em casa, ou agendar um horário que seja adequado à sua rotina diária. Pode ser também que a pessoa deseje que o ar condicionado seja mantido desligado enquanto ela está distante de casa. Estas aplicações com foco em casas inteligentes contribuem para melhorar a vida das pessoas, pois facilitam o monitoramento e o controle remoto de utensílios domésticos e sistemas.
+
+    As aplicações mais simples das tecnologias envolvidas na construção destes sistemas \acrshort{amiiot} disponibilizam para seus usuários interfaces remotas e terminais para configurar e gerenciar dispositivos. As aplicações mais elaboradas buscam assistir às pessoas reduzindo a complexidade das interações com as tecnologias. Assim, devem ser capazes de aprender a respeito do usuário e seu contexto, de construir um perfil digital descrevendo o comportamento do usuário em determinados locais e na presença de pessoas específicas, de atualizar este perfil e agir em conformidade com os interesses do usuário.
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    A partir dos usuários, do objetivo e do ambiente de tarefas dos sistemas \acrshort{amiiot}, os serviços e as aplicações devem ser construídos. Entretanto, o desenvolvimento desses sistemas é uma tarefa não trivial. Além das dificuldades impostas ao projeto por ambientes de tarefas difíceis, outra grande dificuldade está no processo de teste e validação destes sistemas. A abordagem computacional inteligente que está sendo proposta enxerga os sistemas \acrshort{amiiot} como sistemas multi-agentes que podem ser decompostos em uma arquitetura e uma organização de programas de controle dos agentes envolvidos. 
+
+    Uma organização adequada dos programas dos agentes envolvidos implementa as funções e o comportamento do sistema, mapeando as percepções que chegam pelos sensores e as ações que vão para os atuadores, visando realizar os objetivos do sistema \acrshort{amiiot} em seu ambiente de tarefas. A arquitetura do sistema  consiste em sua estrutura do ponto de vista físico, ou seja, nos dispositivos de computação com sensores e atuadores físicos. Organizados de maneira a executar adequadamente os programas dos agentes que controlam o sistema. O foco da abordagem computacional inteligente proposta está nas etapas de projeto e de avaliação de desempenho da organização de programas dos agentes componentes do sistema.
+    % AmI2oT. podemos explanar um pouco mais ressaltando a organização como function e behavior, e arquitetura como structure (SBF)
+    
+    Grande parte da literatura sobre agentes inteligentes está focada no processo de projeto de programas de agentes artificiais racionais. Especificamente relacionados com a concepção de sistemas \acrshort{amiiot} adotada na proposta, vale ressaltar alguns dos trabalhos mais fundamentais sobre agentes inteligentes \cite{norvig2004inteligencia}, \cite{wooldridge2009introduction}, e sobre organizações em sistemas multi-agentes \cite{hubner2002model}, bem como alguns dos trabalhos que descrevem noções relevantes oriundas da área de Engenharia de Sistemas \cite{simon1996sciences} e, principalmente, da Engenharia de Sistemas de Sistemas \cite{simon1996sciences, barry2009agent}.
+
+    Conforme ocorre em muitas espécies de problema de concepção de projetos em engenharia, o tipo de sistema (\acrshort{amiiot}) proposto pode ser visto como uma organização de um número grande de componentes, tanto de hardware como de software, cujos comportamentos e funções, são bem conhecidos quando isolados. A dificuldade está em predizer o comportamento do sistema como um todo, visto que as interações em nível micro podem gerar comportamentos emergentes em nível macro que podem ou não ser benéficos ao sistema. \textit{Bugs} nos programas dos agentes, falhas nos dispositivos físicos, comportamentos não previstos dos usuários dos sistema, podem refletir em todo o sistema, tornando o sistema menos confiável. 
+
+    %comentar sobre comportamentos emergentes
+    %INSERIR PARAGRAFO SOBRE UM EXEMPLO
+
+    Pretende-se descobrir como construir um sistema confiável a partir de componentes não confiáveis, isto é, que têm uma probabilidade definida de funcionar incorretamente. O problema consiste em organizar os componentes e as suas interconexões de tal maneira que o sistema completo funcione corretamente. Nestas circunstâncias, o caminho principal para a concepção dos sistemas \acrshort{amiiot} é fazer o que se têm feito quando se trata de sistemas complexos, ou seja: construir os sistemas e verificar adequadamente como se comportam, modificando-os quando necessário e aperfeiçoá-los em fases sucessivas.
+
+    O problema dessa abordagem é que para construir sistemas \acrshort{amiiot} são necessários diversos componentes que podem não estar disponíveis. E mesmo se os recursos estiverem acessíveis, implantar toda a base desse sistema para em seguida realizar testes não é a estrategia mais inteligente. Além disso existem diversos componentes diferentes que se comportam de formas distintas de acordo com o ambiente onde são inseridos. 
+    
+    Para que o desenvolvedor do sistema possa entender todos esses componentes conectados é necessário simular suas interações e verificar se seu comportamento esta dentro daquilo que o sistema  prevê.  O uso de simulações para teste e validação do sistema pode trazer diversas vantagens a sua construção. Podemos verificar se as ideias iniciais do sistema de fato geram os resultados esperados, alterar características fundamentais do sistema sem impactar muito em seu custo, e examinar diferentes situações improváveis de se testar no mundo real. 
+
+        %ESSES 2 PARAGRAFOS NÃO CONDIZERM TANTO COM A PROPOSTA ATUAL DO TRABALHO
+    No que diz à avaliação de desempenho da organização de programas de agentes artificiais racionais projetados para um sistema \acrshort{amiiot}, é importante considerar primeiro que, em vez de procurar por erros de programação mais comuns, o projetista deve definir um conjunto de testes que vise avaliar a funcionalidade do sistema, ou seja, se o sistema se comporta conforme esperado. Assim, sendo um sistema sócio-técnico, torna-se imperativo incorporar no processo de projeto o usuário, ou, pelo menos, um modelo deste, que permita avaliar o desempenho do sistema em teste no que diz respeito à adequação da interação mantida com o usuário. Pode ser necessário criar um número arbitrário de usuários diferentes para serem simulados, por meio da especificação de alguns parâmetros que caracterizam o comportamento destes usuários.
+
+    No processo de avaliação de desempenho pode ser necessário levar em consideração o valor médio e desvio padrão para o tempo em que certos eventos ocorrem como, por exemplo, em cenários de casas inteligentes, o momento da chegada de um usuário em casa, que quartos e com que frequência determinado usuário costuma visitar, a tendência do usuário em apagar as luzes dos cômodos da casa, etc. Assim, considerando a abordagem proposta para a avaliação de desempenho da organização de programas de agentes artificiais racionais projetados para um sistema \acrshort{amiiot}, vale ressaltar alguns dos trabalhos mais fundamentais sobre simulação multi-agentes que vão além das simulações sociais \cite{davidsson2000multi, garcia2010human} e, principalmente, os trabalhos mais recentes sobre simulação dirigida por agentes \cite{barry2009agent}.
+    
+
+    
+    
+\section{Motivação}
+\label{sec:motivacao}
+ 
+    Quaisquer sistemas, principalmente os mais complexos, estão sujeitos a problemas e \emph{bugs} não previstos. Em aplicações de ambientes inteligentes não é diferente. Existem diversos fatores que complicam o processo, por exemplo: O numero de pessoas entrando e saindo do ambiente. Mal funcionamento ou ruídos nos dispositivos. Incompatibilidade dos protocolos utilizados. Esses e vários outros problemas muitas vezes são percebidos apenas após a construção de toda a infraestrutura que compõe o sistema, tornando sua correção muito mais complicada. 
+    
+    %Um dos desafios em IoT é a concepção de todo o sistema ambiental. O projetista deve ser capaz de prever as dificuldades que surgirão no sistema, as interações entre os dispositivos (heterogeneidade), o comportamento dos usuários, e as próprias condições do ambiente (temperatura, umidade, etc). Todos esses fatores podem interferir na execução do sistema. Dentre os problemas citados o fator mais imprevisível é o humano. É muito difícil para um desenvolvedor, em tempo de projeto, prever como os usuários do sistema se comportarão no ambiente. 
+    
+    Para auxiliar o desenvolvedor a prever esses problemas antes da construção de todo o sistema é necessário de simular o \acrlong{sma} que controla os dispositivos da forma mais realista possível. Essa simulação deve ser capaz de representar tanto as interações do \acrlong{sma} com pessoas, quanto as interações entre o \acrlong{sma} com os dispositivos. Dessa forma o desenvolvedor será capaz de corrigir seu sistema, tornando a aplicação final mais robusta e menos dispendiosa.
+
+\section{Objetivos}
+\label{sec:objetivos}
+
+
+\subsection{Objetivo Geral}
+\label{sec:objetivo-geral}
+
+    O objetivo geral deste trabalho, é propor uma abordagem de simulação e testes para o desenvolvimento de Sistemas Multi-Agentes capazes de controlar ambientes inteligentes. O proposito é permitir que os desenvolvedores identifiquem situações imprevistas e as corrijam antes mesmo de implantar os dispositivos físicos no ambiente, evitando desperdício de tempo e recursos. 
+
+\subsection{Objetivos Específicos}
+\label{sec:objetivos-especificos}
+
+    Mais especificamente, neste trabalhos propomos os seguintes objetivos.
+
+	\begin{alineas}
+		\item Construir um \acrlong{sma} capaz de controlar um ambiente inteligente %definir que SMA, ou seja o problema
+		\item Propor um modelo de agente capaz de simular o comportamento humano.
+		\item Definir um modelo de comportamento realista para os dispositivos que serão utilizados na simulação, buscando representar falhas e ruídos.
+		\item Elaborar um outro \acrlong{sma} composto pelos agentes humanos previamente propostos, e organizar a ineração entre os agentes humanos, o \acrlong{sma} do ambiente, e os dispositivos simulados.
+		
+	\end{alineas}

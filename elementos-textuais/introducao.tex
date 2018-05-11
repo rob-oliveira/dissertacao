@@ -1,0 +1,103 @@
+\chapter{Introdução}
+\label{cap:introducao}
+    
+    Ambientes inteligentes (\acrshort{ami}) são sistemas sociotécnicos, ou seja, sistemas distribuídos que envolvem interações complexas entre pessoas, máquinas e software, concebidos para realizar objetivos de interesse dos usuários do sistema em ambientes de tarefa difíceis. Todos esses componentes devem interagir para que, de maneira não intrusiva, o sistema perceba as informações do ambiente de tarefas e dos usuários, utilizando-as para selecionar um conjunto de ações a serem executadas. O propósito é realizar os objetivos dos usuários para os quais o sistema foi concebido. Nas aplicações de sistemas \acrshort{ami} o usuário é a entidade central do modelo. 
+   
+    Com a popularização da internet e a miniaturização dos dispositivos, houve um impulso para o surgimento e a inserção de sistemas \acrshort{ami} através de vários objetos equipados com uma interface para conexão. Atualmente, estes dispositivos e outros objetos físicos fazem parte do cotidiano das pessoas e podem ser conectados à Internet, visando implementar sistemas \acrshort{ami} que simplifiquem a vida destas pessoas de diversas maneiras. A popularidade deste tipo de implementação contribuiu para o surgimento do paradigma de Internet das Coisas. Assim, estes sistemas e todos os seus serviços devem ser construídos a partir dos usuários, de seus objetivos, e do ambiente de tarefa.
+    
+    Em ambientes inteligentes controlados, com pouco espaço, sem muitas mudanças, e com pouca circulação de pessoas, não existem muitas dificuldades no processo de criação dos sistemas \acrshort{ami}. Mas à medida que o ambiente cresce e as condições de funcionamento passam a ser mais adversas, a chance do projeto do sistema \acrshort{ami} conter erros aumenta. Isso ocorre porque o desenvolvedor precisa entender como os componentes do sistema devem se comportar antes de construí-lo. O que pode ser relativamente simples para sistemas pequenos, mas praticamente impossível em sistemas \acrshort{ami} complexos. 
+    
+    Durante o projeto de sistemas \acrshort{ami} grandes e complexos, o desenvolvedor deve lidar com centenas ou milhares de componentes inteligentes espalhados por uma determinada região. Cada um  desses componentes serve a um propósito específico, que ao ser somado as ações de outros componentes é capaz de atingir o objetivo do sistema. Tais componentes interagem com as pessoas que transitam na região afim de produzir algum serviço útil a elas. Porém, devido a grande quantidade de componentes envolvidos nesse tipo de aplicação, a possibilidade de surgirem comportamentos imprevistos no sistema \acrshort{ami} é muito alta. 
+    
+    Além da grande quantidade de componentes nas aplicações de sistemas \acrshort{ami}, outro fator que contribui para a complexidade do sistema está relacionado às pessoas que frequentam o ambiente. Esse fator não determinístico em conjunto com a imprevisibilidade associada aos componentes do sistema, aumentam a complexidade imposta ao projeto do sistema \acrshort{ami}. Assim, a construção de destes sistemas complexos é uma tarefa árdua que necessita de muitos recursos e um alto nível de planejamento. 
+    
+    Qualquer erro na etapa de concepção do projeto pode ser propagado por todas as etapas seguintes, causando ainda mais falhas e, consequentemente, perda de tempo e recursos na tentativa de corrigi-los. Em geral, estes erros não estão relacionados à competência dos dos desenvolvedores, mas sim à alta complexidade associada a construção do sistema. Além das dificuldades impostas ao projeto por ambientes de tarefas difíceis, outro grande obstáculo está no processo de teste e validação destes sistemas. O objetivo deste trabalho consiste em conceber uma abordagem computacional inteligente que seja capaz de contribuir com a criação de sistemas \acrshort{ami} complexos e, principalmente, nas etapas de projeto e de avaliação de desempenho do sistema.
+    
+    Duas ideias principais estão presentes na abordagem. A primeira ideia, para ajudar na concepção de uma sistema \acrshort{ami}, consiste em representar formalmente determinadas decomposições funcionais do sistema  através de organizações de programas de agentes artificiais \citeonline{norvig2004inteligencia}, \citeonline{wooldridge2009introduction} e \citeonline{hubner2002model}. A segunda, consiste em utilizar uma plataforma de simulação multiagente, adequada à representação formal proposta, que permita ao projetista entender melhor o comportamento do sistema \acrshort{ami} em projeto, analisando seu desempenho em diferentes cenários do ambiente de tarefas, prevenindo erros e auxiliando na construção de projetos mais eficientes.
+    
+    Mais especificamente, o esquema de representação proposto na primeira ideia é implementado a partir de um quadro formal denominado \acrshort{fec}. Esse quadro formal modulariza o sistema em três aspectos distintos, sendo eles: modelo funcional, modelo estrutural, e modelo comportamental. O modelo funcional determina os objetivos do sistema e as métricas que irão avaliar se os mesmos foram alcançados. O modelo estrutural descreve as características necessárias para que o sistema possa alcançar esses objetivos, definindo a organização dos componentes e as formas de interação entre os componentes. O modelo comportamental estipula as funções computacionais necessárias para que o sistema possa alcançar seus objetivos, determinados no modelo de função, utilizando os recursos definidos no modelo estrutural. 
+    
+    A partir de um modelo \acrshort{fec} de um sistema \acrshort{ami} é possível gerar simulações baseada em agentes para permitir ao desenvolvedor verificar o comportamento do sistema em projeto, sem a necessidade de implantar toda a infraestrutura física necessária. A simulação ainda permite que o desenvolvedor tenha controle de todos os elementos da aplicação, permitindo que ele adicione ou remova características de elementos, modifique condições ambientais, ou altere a quantidade de elementos presentes na simulação.
+    
+    
+    %O objetivo deste trabalho é conceber uma abordagem computacional inteligente, capaz de contribuir com a criação de sistemas sociotécnicos complexos nas etapas de projeto e de avaliação de desempenho. Sistemas sociotécnicos são sistemas distribuídos que envolvem interações complexas entre pessoas, máquinas e software, concebidos para realizar objetivos de interesse dos usuários do sistema em ambientes de tarefa difíceis. Nesta etapa, o projeto focará nos sistemas da área de Inteligência Ambiental (\acrshort{ami}) e que são concebidos concretamente a partir do conjunto de tecnologias que implementam o paradigma de Internet das Coisas (\acrshort{iot}).
+    
+    %Neste trabalho, estes sistemas sociotécnicos de Inteligência Ambiental com Internet das Coisas são representados pela sigla \acrshort{amiiot}.
+    
+    %A abordagem que propomos enxerga um sistema \acrshort{ami} como um sistema multiagente, onde cada componente do sistema pode ser representados por um ou mais agentes inteligentes. Nossa intenção é simular o comportamento que esperamos dos usuários, do hardware, e do software do sistema, estudando a forma como se relacionam a partir das informações que temos do ambiente e, daquilo que presumimos que o usuário deseja.
+    
+    %Para ilustrar o que pretendemos fazer tomemos o seguinte exemplo, digamos que tenhamos de construir a seguinte aplicação: Um aeroporto de grande porte deseja automatizar seu sistema de limpeza, utilizando diversos robôs aspiradores de pó. O objetivo da aplicação é maximizar a limpeza do aeroporto, economizando o máximo de energia, e sem incomodar os passageiros. O primeiro e segundo objetivos, apesar de conflitantes, podem ser resolvidos com certa facilidade ainda em tempo de projeto. Mas como o desenvolvedor da aplicação pode prever uma estratégia de limpeza que não incomode os passageiros que transitam pelo aeroporto? O quanto as estratégias de limpeza e economia podem impactar na forma como o robô se relacionara com as pessoas que circulam no ambiente? As pessoas que frequentam o ambiente atrapalharão os robôs em suas atividades? %Ou se a aplicação é viável? 
+    
+    %Construir esse tipo de aplicação sem ter uma ideia de como responder essas perguntas, pode levar a criação de um sistema que provavelmente passara por diversas mudanças ao longo de sua implantação, levando a grandes perdas de recursos e tempo. Para ajudar a responder essas perguntas, tentar predizer o comportamento desse tipo de sistema, e estudá-lo antes de construí-lo, utilizamos uma abordagem de simulação baseada em multiagentes \cite{davidsson2000multi, norling2000enhancing}. 
+    
+    %Dessa forma, o sistema exemplificado seria simulado através de agentes inteligentes. Ou seja, todos os componentes reais da aplicação seriam substituídos por agentes que simulariam suas interações reais. Logo, hardware que representa o robô aspirador de pó passa a ser um agente, que é subordinado ao agente de software que o controla (sua inteligência). E os usuários da aplicação também seriam retratados por agentes. Esse tipo de representação das partes do sistema permite que o desenvolvedor tenha pleno controle de cada elemento da simulação, adicionando ou removendo características deles conforme achar necessário. Além de permitir observar todos os aspectos do sistema, analisando tanto as características de um elemento específico quanto seu comportamento global. 
+    
+    %Para a construção da abordagem utilizamos diversos conceitos da engenharia de sistemas \cite{simon1996sciences} que auxiliam na construção de sistemas de alta complexidade, e que são expandidos com as ideias de meta-sistemas \cite{barry2009agent}. Também destacamos os conceitos de agentes inteligentes propostos por \citeonline{norvig2004inteligencia} e \citeonline{wooldridge2009introduction}, que baseiam uma nova definição de agente utilizado nesse projeto que será detalhada num capítulo adiante. E ainda as organizações de sistemas multiagentes \cite{hubner2002model} que auxiliam na formalização das relações entre os agentes propostos.
+    
+    %Todos esses conceitos auxiliam o desenvolvedor a formalizar e simular seu sistema, facilitando sua compreensão sobre ele. A simulação do sistema permite que o desenvolvedor possa verificar hipóteses sobre os requisitos, atestando sua viabilidade e complexidade. Além de permitir o teste de comportamento do sistema sobre condições ambientais extremas, que dificilmente podem ser verificadas em um ambiente físico. Esses testes serão avaliados a partir de uma medida de desempenho, definida pelo projetista da aplicação, permitindo que ele possa escolher, entre diversas estratégias, uma que satisfaça melhor os critérios estabelecidos.
+    
+
+\section{Organização do Trabalho}
+    
+O trabalho está estruturado da seguinte forma, no Capítulo \ref{cap:fundamentacao-teorica}, destacamos todos os conceitos que fundamentam nossa abordagem, desde noções sobre ambientes inteligentes, passando por agentes inteligentes e suas organizações, até a engenharia de sistemas. No Capítulo \ref{cap:trabalhos-relacionados} salientamos os diversos trabalhos que nos inspiraram ou seguem um roteiro semelhante ao que propomos. Finalmente no Capítulo \ref{cap:abordagem} descrevemos a abordagem que desenvolvemos nesse trabalho. No Capítulo \ref{cap:resultados} apresentamos os resultados obtidos e os trabalhos futuros. 
+    
+\section{Motivação}
+\label{sec:motivacao}
+
+% Projeto contribuirá de maneira significativa/original para o desenvolvimento científico e/ou para o progresso de alguma área?
+
+% É oportuno abordar este projeto agora?
+
+% Quem será beneficiado com a solução do problema que você pretende abordar?
+
+% Outros tentaram resolver o mesmo problema empregando uma solução diferente?
+
+% Quais são as limitações dos trabalhos anteriores diante do problema?
+
+% Propõe algo novo no projeto?
+
+% Estende o estado da arte?
+
+% Resolve algum problema anteriormente não resolvido ou supera limitações de trabalhos anteriores?
+
+A popularização dos sistemas \acrshort{ami}, aliada a expansão da internet das coisas, torna a demanda por aplicações de inteligencia ambiental cada vez mais comum. 
+Neste trabalho, é desenvolvida uma abordagem de concepção para sistemas de inteligencia ambiental. Essa abordagem tem como principal objetivo auxiliar os desenvolvedores na definição inicial do sistema, e em seguida na sua evolução. 
+ 
+Outros trabalhos, como o de \citeonline{garcia2010human} também define uma metodologia de desenvolvimento para sistemas \acrshort{ami}. Já no trabalho de \citeonline{mustafa2013simulation} são utilizadas simulações para coletar dados e aprimorar um sistema a ser construído. Ambos os trabalhos utilizam simulações multiagentes para melhorar um sistema a ser construído. Porem, nenhum deles determina um quadro formal para auxiliar na construção dessa simulação, ou a definição de suas métricas, e a segunda não define uma metodologia para a construção do sistema. 
+
+A abordagem proposta elabora um sistema a partir de três aspectos distintos. O primeiro, Funcional, define os objetivos do sistema, e determina quais métricas serão usadas par extrair uma medida de desempenho. O segundo aspecto, Estrutural, estabelece a arquitetura do sistema, definindo as entidades e suas conexões. Por fim o aspecto Comportamental, delimita os comportamentos de cada entidade assim como sua forma de comunicação. A partir desse modelo inicial do sistema, é construída uma simulação de onde são coletados dados de acordo com as medidas estabelecidas no modelo de função. Com essas medidas o sistema pode ser reformulado, visando melhorar sua performance. 
+Esse ciclo de simulação e reformulação do sistema permite que este amadureça mais rapidamente, ainda mais no caso de sistemas \acrshort{ami}, onde são necessários dispositivos físicos no ambiente. 
+    
+
+    
+    %Para auxiliar na concepção de projetos de sistemas complexos, propomos uma abordagem de construção de projetos utilizando um quadro formal denominado \acrshort{fec}. Esse quadro formal modulariza o sistema em três aspectos distintos, sendo eles: modelo funcional, modelo estrutural, e modelo comportamental. O modelo funcional determina os objetivos do sistema e as métricas que irão avaliar se eles foram alcançados ou não. O modelo estrutural estabelece as características necessárias para que o sistema possa alcançar esses objetivos, definindo a organização dos componentes e as formas de comunicação. O modelo comportamental estipula as funções computacionais necessárias para que o sistema possa alcançar seus objetivos, determinados no modelo de função, utilizando os recursos definidos no modelo estrutural. 
+    
+    %permitir ao desenvolvedor verificar o comportamento do sistema em projeto, sem a necessidade de implantar toda a infraestrutura física necessária. A simulação ainda permite que o desenvolvedor tenha controle de todos os elementos da aplicação, permitindo que ele adicione ou remova características de elementos, modifique condições ambientais, ou altere a quantidade de elementos presentes na simulação. 
+    
+    %A realização desses experimentos em um ambiente de simulação, apesar de representar um custo a mais para o projeto, pode evitar grandes perdas com retrabalho. Permitindo que o desenvolvedor da aplicação conheça melhor o sistema que está desenvolvendo, e ainda adiantando certos aspectos da produção. Através de uma medida de desempenho associada a simulação, é possível também testar diversas abordagens para a solução de um problema. Aumentando ainda mais a eficiência do sistema final.
+ 
+
+\section{Objetivos}
+\label{sec:objetivos}
+
+
+\subsection{Objetivo Geral}
+\label{sec:objetivo-geral}
+
+    O objetivo geral deste trabalho consiste em propor um quadro formal para auxiliar na concepção e desenvolvimento de aplicações para sistemas de ambientes inteligentes e na construção de simulações para contribuir com o teste e validação desses sistemas \acrshort{ami}.
+    
+    O quadro formal proposto foi dividido visando levantar três  modelos associados ao sistema \acrshort{ami} que se pretende desenvolver, sendo eles: modelo de função, modelo de estrutura, e modelo de comportamento. Com base nesses modelos, serão concebidas organizações de agentes que representam cada entidade do sistema. Cada agente inserido em cada organização cumprirá um papel associado a uma função da entidade de acordo com o nível de detalhamento pretendido pelo desenvolvedor. 
+    
+    Com a definição desses agentes, será desenvolvida uma simulação do sistema pretendido, com o proposito de estimar o desempenho do sistema em um ambiente virtual. O propósito é permitir que os desenvolvedores concebam diferentes modelos do sistema, que permitam a identificação e correção de situações imprevistas na etapa de concepção do sistema, evitando desperdício de tempo e recursos e permitindo testar o sistema em diferentes situações.  
+
+\subsection{Objetivos Específicos}
+\label{sec:objetivos-especificos}
+
+    Para alcançar o objetivo geral, mais especificamente, este trabalho propõe os seguintes objetivos:
+    
+    \begin{alineas}
+		\item Conceber um quadro formal que permita ao projetista do sistema \acrshort{ami} especificar adequadamente as funções do sistema, ou seja, os objetivos do sistema e as métricas que irão avaliar se os mesmos foram alcançados. 
+		\item Conceber um quadro formal que permita ao projetista do sistema \acrshort{ami} especificar a estrutura do sistema, ou seja, a organização dos componentes e as formas de interação entre os componentes so sistema.
+		\item Conceber um quadro formal que permita ao projetista do sistema \acrshort{ami} especificar o comportamento do sistema \acrshort{ami}, ou seja, que é necessário para o sistema alcançar os objetivos no modelo de função empregando a organização definida no modelo estrutural.
+		\item Aplicar o quadro formal no projeto de sistemas \acrshort{ami} e na simulação de sistemas projetados.
+	\end{alineas}
