@@ -1,4 +1,4 @@
-\chapter{Aplicação exemplos}
+\chapter{Exemplos de Aplicação}
 \label{cap:resultados}
 
 \lstdefinelanguage{NetLogo}{
@@ -27,14 +27,14 @@
 
 Este capítulo apresenta uma primeira aplicação da abordagem proposta no capítulo anterior para o projeto de sistemas de inteligência ambiental (sistemas \acrshort{ami}). Conforme mencionado, a abordagem consiste em uma contribuição para a etapa de análise funcional do sistema e no \textit{feedback} que ela pode dar para refinar a análise de requisitos e a síntese do projeto. O domínio de aplicação da ideia escolhido pertence à área de pesquisa e desenvolvimento tecnológico resultante da combinação da robótica autônoma e da inteligência ambiental, mais especificamente o campo dos robôs aspiradores de pó.
 
-Apesar do domínio de aplicação específico como o mundo dos aspiradores de pó, o capítulo visa mostrar aos projetistas, de sistemas AmI em geral, como projetar estes sistemas em termos de modelos \acrshort{fec} associados e como realizar estudos experimentais objetivando verificar/encontrar decomposições funcionais alternativas de subsistemas componentes, capazes de atender aos requisitos funcionais e de desempenho dos sistemas AmI. O ambiente de tarefas e os programas dos agentes representando as pessoas e os robôs aspiradores de pó foram implementados em NetLogo \cite{wilensky1999netlogo}, uma plataforma de software que facilita o desenvolvimento das capacidades dos programas dos agentes e do dinamismo do ambiente. A razão para a escolha dessa plataforma é alta simplicidade em representar os agentes, facilitando a construção de ambientes complexos em curto espaço de tempo. Os codigos utilizados para construir a simulação podem ser observados no seguinte endereço \footnote{https://bitbucket.org/rob\_oliveira/netlogocleanersim}.
+Apesar do domínio de aplicação específico, como o mundo dos aspiradores de pó, o capítulo visa mostrar aos projetistas de sistemas \acrshort{ami} em geral, como projetar estes sistemas em termos de modelos \acrshort{fec} associados e como realizar estudos experimentais objetivando verificar/encontrar decomposições funcionais alternativas de subsistemas componentes capazes de atender aos requisitos funcionais e de desempenho dos sistemas \acrshort{ami}. O ambiente de tarefas, os programas dos agentes representando as pessoas e os robôs aspiradores de pó foram implementados em NetLogo \cite{wilensky1999netlogo}, uma plataforma de \textit{software} que facilita o desenvolvimento das capacidades dos programas dos agentes e do dinamismo do ambiente. A razão para a escolha dessa plataforma é a alta simplicidade em representar os agentes, facilitando a construção de ambientes complexos em curto espaço de tempo. Os códigos utilizados para construir a simulação podem ser observados no seguinte endereço \footnote{https://bitbucket.org/rob\_oliveira/netlogocleanersim}.
 
-O capítulo foi dividido em mais quatro seções. A Seção \ref{sec:dom-aplicacao} descreve o domínio de aplicação, isto é, o sistema AmI pretendido e seu ambiente de tarefas. A Seção \ref{sec:cenario-teste} apresenta o cenário de teste adotado, as propriedades do ambiente de tarefas e as funcionalidades necessárias ao sistema neste ambiente. A Seção \ref{sec:plat-sim} apresenta os principais aspectos associados a plataforma de simulação NetLogo, que são importantes para a compreensão dos resultados. A Seção \ref{sec:dev-experimento} apresenta os projetos em modelos \acrshort{fec} e os resultados (objetos emergentes) de suas simulações na NetLogo.  E, finalmente, na seção \ref{sec:conclusao} discutimos os resultados obtidos nos experimentos. 
+O capítulo foi dividido em mais quatro seções. A Seção \ref{sec:dom-aplicacao} descreve o domínio de aplicação, isto é, o sistema \acrshort{ami} pretendido e seu ambiente de tarefas. A Seção \ref{sec:cenario-teste} apresenta o cenário de teste adotado, as propriedades do ambiente de tarefas e as funcionalidades necessárias ao sistema neste ambiente. A Seção \ref{sec:plat-sim} apresenta os principais aspectos associados à plataforma de simulação NetLogo, que são importantes para a compreensão dos resultados. A Seção \ref{sec:dev-experimento} apresenta os projetos em modelos \acrshort{fec} e os resultados (objetos emergentes) de suas simulações na NetLogo. E, finalmente, na seção \ref{sec:conclusao}, discutimos os resultados obtidos nos experimentos. 
 
 \section{Domínio de Aplicação}
 \label{sec:dom-aplicacao}
 
-O domínio proposto está dentro de uma combinação das áreas de robótica autônoma e de inteligência ambiental. De um lado, a robótica autônoma visando criar robôs compostos por sensores, atuadores e controladores, que sejam capazes de viver em casas e locais públicos, e sejam habilidosos na realização de tarefas físicas que ajudem na vida cotidiana das pessoas. De outro lado, a inteligência ambiental visando criar redes de dispositivos domésticos inteligentes capazes de fornecer informações, comunicação e serviços para as pessoas. A Figura \ref{fig:dom-ami} ilustra um exemplo destes robôs autônomos em um ambiente de computação ubíqua inteligente, em que existem muitos computadores e redes sensores no ambiente para a geração de informações úteis para o controle dos robôs.
+O domínio proposto está dentro de uma combinação das áreas de robótica autônoma e de inteligência ambiental. De um lado, a robótica autônoma visando criar robôs compostos por sensores, atuadores e controladores, que sejam capazes de viver em casas e locais públicos, e sejam habilidosos na realização de tarefas físicas que ajudem na vida cotidiana das pessoas. De outro lado, a inteligência ambiental visando criar redes de dispositivos domésticos inteligentes capazes de fornecer informações, comunicação e serviços para as pessoas. A Figura \ref{fig:dom-ami} ilustra um exemplo desses robôs autônomos em um ambiente de computação ubíqua inteligente, em que existem muitos computadores e redes sensores no ambiente para a geração de informações úteis para o controle dos robôs.
 
 \begin{figure}[h!]
     \centering
@@ -42,11 +42,11 @@ O domínio proposto está dentro de uma combinação das áreas de robótica aut
     \UECEfig{}{
         \includegraphics[width=8cm]{figuras/dom-ami}
     }{
-        \Fonte{Elaborado pelo autor}
+        \Fonte{Elaborada pelo autor}
     }   
 \end{figure}
 
-Dentro do contexto da combinação da robótica autônoma e da inteligência ambiental, o sistema AmI para aplicação da abordagem envolve o campo dos robôs aspiradores de pó. Este tipo de robô faz parte do mundo atualmente conhecido como Internet das Coisas (\acrshort{iot}). O propósito de um robô aspirador é ser um servo para as pessoas, economizando o tempo e esforço, limpando a sujeira de locais de interesse. Por exemplo, a fabricante LG disponibiliza uma vasta gama de aparelhos inteligentes que são controlados por um aplicativo de mensagens. Em particular, esta empresa fabrica um robô aspirador denominado \textit{HomeBot Square}  (Figura \ref{fig:cleaner-bot}a). Através do aplicativo de mensagens, o \textit{HomeBot Square} e outros dispositivos inteligentes LG podem ser programados com comandos em linguagem natural.
+Dentro do contexto da combinação da robótica autônoma e da inteligência ambiental, o sistema \acrshort{ami} para aplicação da abordagem envolve o campo dos robôs aspiradores de pó. Este tipo de robô faz parte do mundo atualmente conhecido como Internet das Coisas (\acrshort{iot}). O propósito de um robô aspirador é ser um servo para as pessoas, economizando o tempo e esforço, limpando a sujeira de locais de interesse. Por exemplo, a fabricante LG disponibiliza uma vasta gama de aparelhos inteligentes que são controlados por um aplicativo de mensagens. Em particular, tal empresa fabrica um robô aspirador denominado \textit{HomeBot Square}  (Figura \ref{fig:cleaner-bot}a). Através do aplicativo de mensagens, o \textit{HomeBot Square} e outros dispositivos inteligentes LG podem ser programados com comandos em linguagem natural.
 
 \begin{figure}[h!]
     \centering
@@ -54,16 +54,16 @@ Dentro do contexto da combinação da robótica autônoma e da inteligência amb
     \UECEfig{}{
         \includegraphics[width=8cm]{figuras/cleaner-bot.png}
     }{
-        \Fonte{Elaborado pelo autor}
+        \Fonte{Elaborada pelo autor}
     }   
 \end{figure}
 
-A companhia iRobot fabrica o robô aspirador Roomba 980 (Figura \ref{fig:cleaner-bot}b). Conhecido como o aspirador da Internet das Coisas, o Roomba 980 pode ser controlado por meio de aplicativos. A companhia garante que o robô é capaz de executar suas tarefas em um tempo contínuo de duas horas, retornando automaticamente a sua base de carga e em seguida voltar ao trabalho até que o local pretendido esteja limpo. Roomba é capaz de limpar área abertas movendo-se em linhas paralelas, empregando um conjunto de sensores para adaptar este padrão quando necessário, navegando perfeitamente entre os móveis e a desordem. Essencialmente, a iRobot instalou uma câmera em cima do Roomba 980, a qual constantemente mapeia o local à medida que o robô se movimenta, tornando-o mais eficiente. 
+A companhia iRobot fabrica o robô aspirador Roomba 980 (Figura \ref{fig:cleaner-bot}b). Conhecido como o aspirador da Internet das Coisas, o Roomba 980 pode ser controlado por meio de aplicativos. A companhia garante que o robô é capaz de executar suas tarefas em um tempo contínuo de duas horas, retornando automaticamente à sua base de carga e em seguida voltar ao trabalho até que o local pretendido esteja limpo. Roomba é capaz de limpar área abertas movendo-se em linhas paralelas, empregando um conjunto de sensores para adaptar este padrão quando necessário, navegando perfeitamente entre os móveis e a desordem. Essencialmente, a iRobot instalou uma câmera em cima do Roomba 980, a qual constantemente mapeia o local à medida que o robô se movimenta, tornando-o mais eficiente. 
 
 \section{Cenário de Teste}
 \label{sec:cenario-teste}
 
-Para ilustrar a aplicação da abordagem, o cenário de teste considera um sistema técnico composto por um conjunto de agentes artificiais robôs aspiradores de pó responsáveis por limpar uma área quadrada (retangular) em um aeroporto, que pode conter obstáculos, sujeira e pessoas, distribuídas de maneira aleatória em uma área determinada. A Figura \ref{fig:ami-aplication} ilustra um cenário específico contendo um conjunto de quatro agentes artificiais, quatro usuários, três obstáculos, três pontos de recarga de energia e bastante lixo. 
+Para ilustrar a aplicação da abordagem, o cenário de teste considera um sistema técnico composto por um conjunto de agentes artificiais robôs aspiradores de pó responsáveis por limpar uma área quadrada (retangular) em um aeroporto, que pode conter obstáculos, sujeira e pessoas, distribuídas de maneira aleatória em uma área determinada. A Figura \ref{fig:ami-aplication} ilustra um cenário específico, contendo um conjunto de quatro agentes artificiais, quatro usuários, três obstáculos, três pontos de recarga de energia e bastante lixo. 
 
 \begin{figure}[h!]
     \centering
@@ -71,19 +71,19 @@ Para ilustrar a aplicação da abordagem, o cenário de teste considera um siste
     \UECEfig{}{
         \includegraphics[width=8cm]{figuras/ami-aplication.png}
     }{
-        \Fonte{Elaborado pelo Autor}
+        \Fonte{Elaborado pelo autor.}
     }   
 \end{figure}
 
-O ambiente de tarefas é parcialmente observável e não determinístico, pois alguns atuadores dos robôs podem falhar. As pessoas que circulam pelo ambiente podem depositar sujeira pelos locais por onde passam, tornando o ambiente dinâmico. Uma configuração particular do ambiente pode ser definida considerando-se as quantidades de robôs, de obstáculos, de lixo e de pessoas em locais específicos do aeroporto. Diferentes configurações compreendem a diferentes cenários (casos) de teste, definindo problemas de diferentes níveis de dificuldade. Por exemplo, algumas configurações podem exigir dos robôs maior consumo de energia, enquanto que outras podem colocar lixo em locais de mais fácil acesso aos robôs. 
+O ambiente de tarefas é parcialmente observável e não determinístico, pois alguns atuadores dos robôs podem falhar. As pessoas que circulam pelo ambiente podem depositar sujeira pelos locais por onde passam, tornando o ambiente dinâmico. Uma configuração particular do ambiente pode ser definida considerando-se as quantidades de robôs, de obstáculos, de lixo e de pessoas em locais específicos do aeroporto. Diferentes configurações compreendem diferentes cenários (casos) de teste, definindo problemas de diferentes níveis de dificuldade. Por exemplo, algumas configurações podem exigir dos robôs maior consumo de energia, enquanto outras podem colocar lixo em locais de mais fácil acesso aos robôs. 
 
-Neste tipo de ambiente difícil, cada agente artificial aspirador de pó deve ser capaz de perceber e atualizar seu conhecimento sobre o ambiente sempre que se mover, identificando e localizando cada um dos objetos, visando realizar o objetivo original do sistema, ou seja, limpar o máximo de sujeira possível, gastando o mínimo de energia e evitando obstáculos quando for necessário. Ele também deve ser capaz de cooperar com os outros agentes no ambiente, por meio de processos de comunicação e troca de conhecimentos úteis para a realização de seus objetivos e do objetivo original do sistema. Seção \ref{sec:dev-experimento} descreve em detalhes a funcionalidade de cada um dos agentes no cenário proposto. 
+Nesse tipo de ambiente difícil, cada agente artificial aspirador de pó deve ser capaz de perceber e atualizar seu conhecimento sobre o ambiente sempre que se mover, identificando e localizando cada um dos objetos, visando realizar o objetivo original do sistema, ou seja, limpar o máximo de sujeira possível, gastando o mínimo de energia e evitando obstáculos quando for necessário. Ele também deve ser capaz de cooperar com os outros agentes no ambiente, por meio de processos de comunicação e troca de conhecimentos úteis para a realização de seus objetivos e do objetivo original do sistema. A Seção \ref{sec:dev-experimento} descreve em detalhes a funcionalidade de cada um dos agentes no cenário proposto. 
 
 
 \section{Plataforma de Simulação}
 \label{sec:plat-sim}
 
-O ambiente de simulação e os programas dos agentes representando as pessoas e os robôs aspiradores de pó foram implementados em NetLogo \cite{wilensky1999netlogo}, uma plataforma de software que facilita o desenvolvimento das capacidades dos programas dos agentes e do dinamismo do ambiente. O ambiente é concebido como um recipiente em que existem objetos observáveis, incluindo obstáculos, lixo e pessoas. As propriedades dos objetos podem ser alteradas e novos objetos podem ser concebidos facilmente e inseridos no ambiente. A Figura \ref{fig:netlogo-env} ilustra um ambiente em tempo de execução. Neste ambiente, existe um agente aspirador de pó (vermelho), cinco obstáculos (marron) e uma grande quantidade de sujeira (cinza).
+O ambiente de simulação e os programas dos agentes representando as pessoas e os robôs aspiradores de pó foram implementados em NetLogo \cite{wilensky1999netlogo}, uma plataforma de \textit{software} que facilita o desenvolvimento das capacidades dos programas dos agentes e do dinamismo do ambiente. O ambiente é concebido como um recipiente em que existem objetos observáveis, incluindo obstáculos, lixo e pessoas. As propriedades dos objetos podem ser alteradas e novos objetos podem ser concebidos facilmente e inseridos no ambiente. A Figura \ref{fig:netlogo-env} ilustra um ambiente em tempo de execução. Neste ambiente, existe um agente aspirador de pó (vermelho), cinco obstáculos (marron) e uma grande quantidade de sujeira (cinza).
 
 
 \begin{figure}[h!]
@@ -107,16 +107,16 @@ Os agentes \textit{links} não possuem uma representação visual, mas simboliza
 
 O objetivo desta seção consiste em apresentar a aplicação da abordagem proposta em cenários de teste semelhantes aos descritos na Seção \ref{sec:cenario-teste}. A apresentação é realizada em diversas subseções. Cada subseção foi dividida em duas partes. A primeira apresenta o modelo \acrshort{fec} associado a uma organização de programas de agentes empregada para representar um sistema técnico, composto por um ou mais robôs aspiradores, e as pessoas no ambiente de tarefas. A segunda parte apresenta os objetos emergentes resultantes de simulações considerando diferentes configurações do ambiente de tarefas, ou seja, fixando-se dimensões e obstáculos, variando-se a quantidade de sujeira, o número de pessoas usuárias, e os tipos de robôs aspiradores no ambiente.
 
-As subseções componentes foram organizadas em uma sequência tal que os detalhes da aplicação do modelo \acrshort{fec} são apresentados evolutivamente. A Subseção \ref{subsec:exp1} considera um sistema AmI composto por um único sistema técnico, ou seja, um único robô aspirador, que interage com um ambiente de tarefas contendo apenas sujeira e obstáculos. A Subseção \ref{sec:exp-dinamico} modifica o ambiente, tornando ele dinâmico, e adiciona um elemento não determinístico ao comportamento do aspirador. A seção \ref{sec:exp-user} adiciona a entidade usuário a simulação. Na seção \ref{sec:multi-asp} observamos o comportamento do sistema quando um conjunto de aspiradores são inseridos no ambiente. A seção \ref{sec:exp-coord} adiciona uma outra entidade, chamada coordenador, que tem o objetivo de controlar as ações dos aspiradores. E finalmente, na seção \ref{sec:grupo}, dividimos os agentes da simulação em grupos no ambiente.
+As subseções componentes foram organizadas em uma sequência tal que os detalhes da aplicação do modelo \acrshort{fec} são apresentados evolutivamente. A Subseção \ref{subsec:exp1} considera um sistema \acrshort{ami} composto por um único sistema técnico, ou seja, um único robô aspirador, que interage com um ambiente de tarefas contendo apenas sujeira e obstáculos. A Subseção \ref{sec:exp-dinamico} modifica o ambiente, tornando ele dinâmico, e adiciona um elemento não determinístico ao comportamento do aspirador. A seção \ref{sec:exp-user} adiciona a entidade usuário a simulação. Na seção \ref{sec:multi-asp} observamos o comportamento do sistema quando um conjunto de aspiradores são inseridos no ambiente. A seção \ref{sec:exp-coord} adiciona uma outra entidade, chamada coordenador, que tem o objetivo de controlar as ações dos aspiradores. E finalmente, na seção \ref{sec:grupo}, dividimos os agentes da simulação em grupos no ambiente.
 
-\subsection{Sistema AmI com um único sistema técnico em um ambiente sem pessoas}
+\subsection{Sistema \textit{AmI} com um único sistema técnico em um ambiente sem pessoas}
 \label{subsec:exp1}
 
-O primeiro experimento considera um sistema AmI com um sistema técnico formado por um único robô aspirador em um ambiente de tarefas que consiste em um certo local em um aeroporto. A Figura \ref{fig:ambiente-exp1} ilustra um ambiente representado por uma grade de $32 \times 32$ \textit{patches}. Os obstáculos (marrom) e a sujeira (cinza) são os únicos objetos observáveis no ambiente. O aspirador (vermelho) deve e realizar o objetivo original ($O_O$) do sistema AmI em um horário em que não existem pessoas transitando. 
+O primeiro experimento considera um sistema \acrshort{ami} com um sistema técnico formado por um único robô aspirador em um ambiente de tarefas que consiste em um certo local em um aeroporto. A Figura \ref{fig:ambiente-exp1} ilustra um ambiente representado por uma grade de $32 \times 32$ \textit{patches}. Os obstáculos (marrom) e a sujeira (cinza) são os únicos objetos observáveis no ambiente. O aspirador (vermelho) deve e realizar o objetivo original ($O_O$) do sistema \acrshort{ami} em um horário em que não existem pessoas transitando. 
 
 \begin{figure}[h!]
     \centering
-    \Caption{\label{fig:ambiente-exp1}Sistema AmI aspirador único em ambiente sem pessoas.} 
+    \Caption{\label{fig:ambiente-exp1}Sistema \textit{AmI} aspirador único em ambiente sem pessoas.} 
     \UECEfig{}{
         \includegraphics[width=10cm]{figuras/exp1-amb22}
     }{
@@ -128,7 +128,7 @@ O agente aspirador se movimenta pelo local visando limpar toda a sujeira nele co
 
 \subsubsection{Modelo F}
 
-A Figura \ref{fig:arq-agent-amb} ilustra a relação agente-ambiente, empregando o termo $AgentAmI$ para representar o programa de agente $AgSoftware$ componente do sistema técnico, cujo hardware é formado por um sensor e um atuador. A figura ilustra também outros termos empregados na concepção do quadro formal que define o modelo $F$. Em qualquer instante $k$ o sensor do aspirador percebe ($s^{*k}$) uma grade de $32 \times 32$ \textit{patches}, os quais podem ser do tipo limpo, sujo ou obstáculo, e o seu atuador executa uma ação adequada ($a^{*k}$) entre aquelas que são possíveis de serem executadas pelo aspirador.
+A Figura \ref{fig:arq-agent-amb} ilustra a relação agente-ambiente, empregando o termo $AgentAmI$ para representar o programa de agente $AgSoftware$ componente do sistema técnico, cujo \textit{hardware} é formado por um sensor e um atuador. A figura ilustra também outros termos empregados na concepção do quadro formal que define o modelo $F$. Em qualquer instante $k$ o sensor do aspirador percebe ($s^{*k}$) uma grade de $32 \times 32$ \textit{patches}, os quais podem ser do tipo limpo, sujo ou obstáculo, e o seu atuador executa uma ação adequada ($a^{*k}$) entre aquelas que são possíveis de serem executadas pelo aspirador.
 
 \begin{figure}[h!]
     \centering
@@ -240,7 +240,7 @@ Assim, se o aspirador de pó for capaz de maximizar a função utilidade, isto �
 
 \subsubsection{Modelo E}
 
-O termo $AgentAmI$ na Figura \ref{fig:arq-agent-amb} foi empregado para representar o componente de software, ou seja, um programa de agente do tipo $AgSoftware$, do sistema técnico aspirador de pó, o qual tem como componentes de hardware um sensor e um atuador. Assim, de acordo com as propostas $P_2$ e $P_3$ na abordagem, este primeiro experimento considerou dois programas de agente do tipo $AgHardware$, um capaz de simular a realização do processamento de informações perceptivas ($s^{*k}$) realizado pelo sensor e outro para simular a execução de ações ($a^{*k}$) pelos atuadores do aspirador. A Figura \ref{fig:exp1-modelE} esboça os programas e a maneira como estão organizados na representação do sistema AmI.
+O termo $AgentAmI$ na Figura \ref{fig:arq-agent-amb} foi empregado para representar o componente de \textit{software}, ou seja, um programa de agente do tipo $AgSoftware$, do sistema técnico aspirador de pó, o qual tem como componentes de \textit{hardware} um sensor e um atuador. Assim, de acordo com as propostas $P_2$ e $P_3$ na abordagem, este primeiro experimento considerou dois programas de agente do tipo $AgHardware$, um capaz de simular a realização do processamento de informações perceptivas ($s^{*k}$) realizado pelo sensor e outro para simular a execução de ações ($a^{*k}$) pelos atuadores do aspirador. A Figura \ref{fig:exp1-modelE} esboça os programas e a maneira como estão organizados na representação do sistema AmI.
 
 \begin{figure}[h!]
     \centering
@@ -380,7 +380,7 @@ O conjunto de regras C-A que orientam a seleção de ações adequadas à percep
 
 O conjunto de regras determina o comportamento do aspirador no ambiente de operação. Conforme indicado na seção que define o Modelo $F$, cada \textit{patch} possui uma cor simbolizando sujeira (ou não) e a presença de obstáculos. Em resumo, sempre que o aspirador estiver sobre um \textit{patch} de cor cinza ele deve selecionar a ação aspirar. Se ele estiver sobre um \textit{patch} branco (limpo) então deverá seguir para o local sujo mais próximo. Se o aspirador não detectar sujeira dentro do perímetro escaneado, ele escolherá de maneira aleatória uma direção para seguir em frente.
 
-O conjunto de regras especificado visa exemplificar a descrição do componente de tomada de decisão do programa $AgSoftware$, por isso não foi detalhado com o rigor necessário para realizar os objetivos próximos do objetivo original, implícitos na função utilidade descrita no modelo $F$ da organização. O conjunto de regras encerra a especificação do modelo $C$ associado ao comportamento do componente de software do sistema \acrshort{ami} proposto no primeiro experimento.
+O conjunto de regras especificado visa exemplificar a descrição do componente de tomada de decisão do programa $AgSoftware$, por isso não foi detalhado com o rigor necessário para realizar os objetivos próximos do objetivo original, implícitos na função utilidade descrita no modelo $F$ da organização. O conjunto de regras encerra a especificação do modelo $C$ associado ao comportamento do componente de \textit{software} do sistema \acrshort{ami} proposto no primeiro experimento.
 
 Dando continuidade à descrição do modelo $C$, no que diz respeito à sua segunda parte, a Figura \ref{fig:exp1-protocol} descreve o protocolo de interação descrevendo as trocas de mensagens possíveis, no modelo $E$ descritas na relação Communication.
 
@@ -447,7 +447,7 @@ A Figura \ref{fig:exp1-perf-limpeza} apresenta uma distribuição associada a qu
 Por outro lado, a distribuição associada à função utilidade, apresentada na Figura \ref{fig:exp1-perf-utilidade}, segue um padrão quase que logarítmico, tendendo a um valor máximo. Esse comportamento também já era esperado, pois, independente da estratégia de limpeza adotada, o sistema \acrshort{ami} é composto por um único agente aspirador para todo o ambiente. 
 
 
-\subsection{Sistema AmI com um único sistema técnico em um ambiente não determinístico}
+\subsection{Sistema \textit{AmI} com um único sistema técnico em um ambiente não determinístico}
 \label{sec:exp-dinamico}
 Em vez de buscar melhorar o subsistema de tomada de decisão do programa controlador $AgSoftware$ no modelo $C$, nesta segunda parte do experimento vamos “injetar realidade” nas simulações envolvendo o mundo do aspirador de pó único, ou seja, tornando o ambiente dinâmico e não determinístico. Para simular um ambiente dinâmico, periodicamente o programa ambiente $Amb$ deposita sujeira em locais que foram previamente limpos pelo aspirador. Para simular um ambiente não determinístico o programa $AgHardware_2$, representando os atuadores do aspirador, poderá deixar de executar uma ação enviada por AgSoftware, caracterizando uma falha.
 
@@ -515,7 +515,7 @@ Na Figura \ref{fig:exp2-perf-utilidade} acima podemos perceber que de todos os c
 
 As medidas associadas a quantidade de sujeira no fim do experimento deixam claro o quanto as falhas nos componentes do agente afetam em seu objetivo. Novamente o agente determinístico em ambiente estático teve um desempenho melhor, como era esperado. Mas o experimento em ambiente dinâmico, que também utiliza um agente determinístico, apresentou uma performance bastante similar. 
 
-\subsection{Sistema AmI com um único sistema técnico em um ambiente com pessoas}
+\subsection{Sistema \textit{AmI} com um único sistema técnico em um ambiente com pessoas}
 \label{sec:exp-user}
 No experimento anterior observamos o comportamento do sistema operando com um único agente aspirador em um ambiente vazio e sem circulação de pessoas. No entanto, na aplicação real serão raras as ocasiões em que o agente estará sozinho no ambiente. Para tornar essa simulação um pouco mais condizente com realidade, neste experimento, vamos inserir no modelo do sistema um conjunto de agentes usuários que circulam pelo e ambiente e o modificam, interagindo com os aspiradores de forma indireta.
 
@@ -533,13 +533,13 @@ Cada agente usuário será representado por um único agente inteligente. Eles u
 
 Este experimento será realizado no mesmo ambiente de simulação utilizado na seção \ref{sec:exp-dinamico}, ou seja, os agentes estarão inseridos em um ambiente dinâmico, que muda com o passar do tempo. Os aspiradores também deverão manter seus componentes não determinísticos que representam suas falhas. Dessa forma, os usuários serão inseridos em um ambiente dinâmico e não determinístico, mais próximo do que seria em um ambiente real. 
 
-Conforme descrito na segunda seção do Capítulo \ref{cap:abordagem}, a proposta \textbf{P3} na abordagem consiste em uma descrição do sistema \acrshort{ami} por meio de uma organização de programas de agentes racionais, representando o software e o hardware componentes do sistema técnico, mas também as pessoas usuárias deste sistema. No que diz respeito ao modelo \acrshort{fec} da organização simulada nos experimentos anteriores, os modelos $F$, $E$ e $C$ neste experimento foram estendidos para acomodar as pessoas no sistema \acrshort{ami}. As subseções a seguir especificam o que foi estendido. 
+Conforme descrito na segunda seção do Capítulo \ref{cap:abordagem}, a proposta \textbf{P3} na abordagem consiste em uma descrição do sistema \acrshort{ami} por meio de uma organização de programas de agentes racionais, representando o \textit{software} e o \textit{hardware} componentes do sistema técnico, mas também as pessoas usuárias deste sistema. No que diz respeito ao modelo \acrshort{fec} da organização simulada nos experimentos anteriores, os modelos $F$, $E$ e $C$ neste experimento foram estendidos para acomodar as pessoas no sistema \acrshort{ami}. As subseções a seguir especificam o que foi estendido. 
 
 \subsubsection{Modelo F}
 
 Esta seção ilustra as alterações nos componentes do modelo $F$ da organização relacionados ao programa $AgSoftware$ no papel $Controller$ empregado nos dois experimentos anteriores. Apesar da presença de pessoas no ambiente, também representadas por programas de agentes na organização, a seção não dá ênfase às alterações nos componentes do modelo $F$ associados aos programas no papel de usuários, visto que os experimentos estão registrando o desempenho do programa no papel $Controller$. Entretanto, o mesmo tipo de especificação pode ser feito para os programas representando pessoas.
 
-A Figura \ref{fig:arq-agent-amb} ilustra uma interação do sistema técnico ($AgentAmI$ = $AgSoftware$, hardware formado por um sensor e um atuador) com o ambiente em um instante $k$. Diferente do primeiro experimento, considerando que existem pessoas no ambiente, em qualquer instante $k$ o sensor do aspirador percebe ($s^{*k}$) uma grade de $32 \times 32$ \textit{patches}, os quais podem ser do tipo limpo, sujo, obstáculo ou pessoa. Assim, a primeira alteração no modelo $F$ está na descrição dos estados do ambiente do aspirador de pó:
+A Figura \ref{fig:arq-agent-amb} ilustra uma interação do sistema técnico ($AgentAmI$ = $AgSoftware$, \textit{hardware} formado por um sensor e um atuador) com o ambiente em um instante $k$. Diferente do primeiro experimento, considerando que existem pessoas no ambiente, em qualquer instante $k$ o sensor do aspirador percebe ($s^{*k}$) uma grade de $32 \times 32$ \textit{patches}, os quais podem ser do tipo limpo, sujo, obstáculo ou pessoa. Assim, a primeira alteração no modelo $F$ está na descrição dos estados do ambiente do aspirador de pó:
 
 \begin{itemize}
     \item $S = \{s^1, s^2, \ldots\}$ --	Estados do ambiente – em qualquer instante $k$ o agente $AgSoftware$ recebe o estado $s^k$ consistindo de uma grade de $3\times3$ \textit{patches}, contida no ambiente definido pelo cenário, que mostra as características dos \textit{patches} (branco, cinza e marrom) e quais agentes estão sobre eles (usuário e aspirador);
@@ -715,7 +715,7 @@ Como podemos observar na Figura \ref{fig:exp3-perf-utilidade}, o valor da utilid
 
 A Figura \ref{fig:exp3-perf-limpeza} acima apresenta a variação de sujeira ao fim de cada um dos cenários.  É fácil perceber que quanto mais usuários no ambiente maior será a quantidade de sujeira inserida nele. Isso mostra que um único agente aspirador não é suficiente para manter o ambiente limpo quando grandes quantidades de pessoas circulam por ele.
 
-\subsection{Sistema AmI com múltiplos aspiradores}
+\subsection{Sistema \textit{AmI} com múltiplos aspiradores}
 \label{sec:multi-asp}
 No experimento anterior, inserimos um novo agente usuário, representando as pessoas que utilizarão o sistema \acrshort{ami}, em um ambiente dinâmico interagindo com um único agente aspirador não determinístico. Neste quarto experimento, vamos inserir outros aspiradores no ambiente e observar o desempenho do sistema em satisfazer seu objetivo original. 
 
@@ -802,7 +802,7 @@ Como o valor observado é a média das utilidades de cada um dos aspiradores, er
 
 Com relação a sujeira no ambiente, a Figura \ref{fig:exp4-perf-limpeza} acima deixa bem claro que a quantidade de aspiradores é uma propriedade muito importante para a limpeza do ambiente. Porém, como vimos na distribuição exibida pela Figura \ref{fig:exp4-perf-utilidade}, é necessário que exista uma mudança de estratégia para que o desempenho do sistema não seja afetado. 
 
-\subsection{Sistema AmI com Agentes Coordenadores}
+\subsection{Sistema \textit{AmI} com Agentes Coordenadores}
 \label{sec:exp-coord}
 
 No experimento anterior observamos o desempenho de um sistema \acrshort{ami}, composto por diversos agentes aspiradores, interagindo com múltiplos usuários em um ambiente. Apesar da grande quantidade de aspiradores apresentar bons resultados, em relação a limpeza do ambiente, sua utilidade tende a ser muito baixa. 
@@ -929,7 +929,7 @@ A curva de utilidade observada para um primeiro cenário, onde temos apenas 3 ag
 Com relação a sujeira do ambiente, não é possível visualizar uma diferença significativa entre a abordagem utilizada no experimento anterior e a atual. Parte disso pode ser explicado pela nova estratégia utilizada, que permite ao coordenador enviar sinais de parada aos demais aspiradores, forçando eles a economizar energia mas impedindo que busquem por sujeira.
 
 
-\subsection{Sistema Ami dividido em Grupos}
+\subsection{Sistema \textit{Ami} dividido em Grupos}
 \label{sec:grupo}
 
 Para tentar melhorar mais um pouco os valores de utilidade do sistema, neste experimento vamos modificar o modelo de estrutura da organização, dividindo os agentes em três grupos responsáveis por áreas diferentes do ambiente. O objetivo é espalhar melhor os aspiradores e os coordenadores, diminuindo sua necessidade de locomoção e maximizando sua área de cobertura. A Figura \ref{fig:exp6-ambiente} abaixo exemplifica como o ambiente será dividido. 
