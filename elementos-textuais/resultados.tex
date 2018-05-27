@@ -382,7 +382,7 @@ O conjunto de regras determina o comportamento do aspirador no ambiente de opera
 
 O conjunto de regras especificado visa exemplificar a descrição do componente de tomada de decisão do programa $AgSoftware$, por isso não foi detalhado com o rigor necessário para realizar os objetivos próximos do objetivo original, implícitos na função utilidade descrita no modelo $F$ da organização. O conjunto de regras encerra a especificação do modelo $C$, associado ao comportamento do componente de \textit{software} do sistema \acrshort{ami} proposto no primeiro experimento.
 
-Dando continuidade à descrição do modelo $C$, no que diz respeito à sua segunda parte, a Figura \ref{fig:exp1-protocol} determina o protocolo de interação, descrevendo as trocas de mensagens possíveis no modelo $E$ indicadas na relação Communication.
+Dando continuidade à descrição do modelo $C$, no que diz respeito à sua segunda parte, a Figura \ref{fig:exp1-protocol} determina o protocolo de interação, descrevendo as trocas de mensagens possíveis no modelo $E$ indicadas na relação $Communication$.
 
 \begin{figure}[h!]
     \centering
@@ -676,8 +676,9 @@ Tendo em vista que os agentes usuários e os aspiradores não se comunicam diret
 
 \subsubsection{Objetos Emergentes}
 
-Diferente do experimento anterior, a quantidade inicial de sujeira no ambiente será mantida fixa em 25\% em todas as execuções. Nesta terceira prática, vamos observar o desempenho do agente $AgSoftware$ no ambiente à medida que novos usuários são inseridos. Serão observados quinze cenários diferentes: no primeiro serão inseridos cinco usuários no ambiente de simulação, e a  cada cenário seguinte serão inseridos mais cinco, totalizando 75 usuários no último experimento.
+Diferente do experimento anterior, a quantidade inicial de sujeira no ambiente será mantida fixa em 25\% em todas as execuções. Nesta terceira prática, vamos observar o desempenho do agente $AgSoftware$ no ambiente à medida que novos usuários são inseridos. Serão observados quinze cenários diferentes: no primeiro serão inseridos cinco usuários no ambiente de simulação, e a  cada cenário seguinte serão inseridos mais cinco, totalizando 75 usuários no último experimento
 
+\clearpage
 \begin{figure}[h!]
     \centering
     \Caption{\label{fig:exp3-sim-exec} Objetos emergentes em uma execução da simulação.} 
@@ -690,7 +691,6 @@ Diferente do experimento anterior, a quantidade inicial de sujeira no ambiente s
 
 A Figura \ref{fig:exp3-sim-exec} mostra as distribuições de cada um dos objetivos próximos do sistema durante a execução de um cenário que contém vinte usuários. A insatisfação, apresentada na cor verde, indica o desempenho do agente relacionado ao objetivo próximo $O_3$.  A Figura \ref{fig:exp3-perf-utilidade} abaixo apresenta um histograma da utilidade do aspirador durante os quinze cenários do experimento. 
 
-\clearpage
 \begin{figure}[h!]
     \centering
     \Caption{\label{fig:exp3-perf-utilidade} Utilidade do terceiro experimento.} 
@@ -739,7 +739,7 @@ A Figura \ref{fig:exp4-org-modelE} consiste em uma organização de programas de
     \centering
     \Caption{\label{fig:exp4-org-modelE} Organização de agentes no experimento quatro.} 
     \UECEfig{}{
-        \includegraphics[width=8cm]{figuras/asp-exp4.png}
+        \includegraphics[width=9cm]{figuras/asp-exp4.png}
     }{
         \Fonte{Elaborada pelo autor.}
     }   
@@ -825,7 +825,7 @@ Como o coordenador também é um tipo de aspirador, seu modelo de função não 
 
 \subsubsection{Modelo E}
 
-O agente coordenador também é composto por dois agentes do tipo AgHardware, representando seus sensores e atuadores e um do tipo $AgSoftware$, estruturado e forma semelhante à apresentada na Figura \ref{fig:exp1-modelC-detail}. A seguir, apresentamos as novidades na estrutura deste experimento. 
+O agente coordenador também é composto por dois agentes do tipo $AgHardware$, representando seus sensores e atuadores e um do tipo $AgSoftware$, estruturado e forma semelhante à apresentada na Figura \ref{fig:exp1-modelC-detail}. A seguir, apresentamos as novidades na estrutura deste experimento. 
 
 \begin{itemize}
     \item Agents -- \{$AgHardware_{11}$, $AgHardware_{21}$, $AgSoftware_1$, $AgHardware_{12}$, $AgHardware_{22}$, $AgSoftware_2$, $AgHardware_{13}$, $AgHardware_{23}$, $AgSoftware_3$, \ldots, $AgHardware_{1M}$, \\$AgHardware_{2M}$, $AgSoftware_M$, $AgPessoa_1$, \ldots, $AgPessoa_N$\} – conjunto com $N_A = N + 3 \times (3 + M)$ programas $AgentAmI$ na organização tal que $M \geq 0$, ou seja, existem pelos menos 3 aspiradores no local.
@@ -838,11 +838,12 @@ O agente coordenador também é composto por dois agentes do tipo AgHardware, re
         \item \{$Bond_{Authority}(AgentAmIController, AgentAmIController)$\} – \{($AgSoftware_1$, $AgSoftware_4$), ($AgSoftware_1$, $AgSoftware_5$), \ldots, ($AgSoftware_1$, $AgSoftware_M$), ($AgSoftware_2$, $AgSoftware_4$), ($AgSoftware_2$, $AgSoftware_5$), \ldots, ($AgSoftware_2$, $AgSoftware_M$), ($AgSoftware_3$, $AgSoftware_4$), ($AgSoftware_3$, $AgSoftware_5$), \ldots, ($AgSoftware_3$, $AgSoftware_M$)\} – cada  programa $AgSoftware_i$ (papel \textit{Controller}) pode delegar uma ou mais tarefas ao programa $AgSoftware_j$, onde i = \{1, 2, 3\}, e j = \{4, ..., M\};
     \end{itemize}
 
-    \item Communication	-- \{$AgentAmIController$, $AgentAmIController$\} – relação descrevendo quem pode enviar mensagens para quem na organização;
+    \item $Communication$	-- \{$AgentAmIController$, $AgentAmIController$\} – relação descrevendo quem pode enviar mensagens para quem na organização;
 
 \end{itemize}
 
 O relacionamento de autoridade definido acima permite que um agente no papel \textit{Controller}, que faça parte de um coordenador, seja capaz de delegar tarefas a um outro agente no papel \textit{Controller} em um aspirador. Isso permite que os coordenadores enviem mensagens aos aspiradores contendo informações referentes a tarefas que eles irão executar. Neste experimento foram definidos três agentes do tipo $AgSoftware$, que pertencem à entidade coordenador. Eles são representados na tabela de relacionamentos acima pelos agentes $AgSoftware_1$, $AgSoftware_2$ e $AgSoftware_3$.
+A Figura \ref{fig:estrutura-coordenador} ilustra os relacionamentos entre as três entidades do experimento. Assim como o aspirador, o coordenador também tem um relacionamento \textit{knowledge} com o usuário, o que significa que seu relacionamento se limita ao conhecimento da existência um do outro.
 
 \begin{figure}[h!]
     \centering
@@ -854,7 +855,7 @@ O relacionamento de autoridade definido acima permite que um agente no papel \te
     }   
 \end{figure}
 
-A Figura \ref{fig:estrutura-coordenador} ilustra os relacionamentos entre as três entidades do experimento. Assim como o aspirador, o coordenador também tem um relacionamento \textit{knowledge} com o usuário, o que significa que seu relacionamento se limita ao conhecimento da existência um do outro. O relacionamento de autoridade entre o coordenador e o aspirador implica necessariamente a existência dos relacionamentos \textit{control}, \textit{coordination} e \textit{knowledge}. Ou seja, além de delegar tarefas ao aspirador, este deve manter o coordenador informado sobre suas atividades. A Figura \ref{fig:exp5-matriz-socio} apresenta a matriz sociométrica que relata a frequência de comunicação entre essas entidades. 
+ O relacionamento de autoridade entre o coordenador e o aspirador implica necessariamente a existência dos relacionamentos \textit{control}, \textit{coordination} e \textit{knowledge}. Ou seja, além de delegar tarefas ao aspirador, este deve manter o coordenador informado sobre suas atividades. A Figura \ref{fig:exp5-matriz-socio} apresenta a matriz sociométrica que relata a frequência de comunicação entre essas entidades. 
 
 \begin{figure}[h!]
     \centering
@@ -972,13 +973,15 @@ Para que o sistema seja capaz de se dividir no ambiente, conforme mostrado na Fi
         \item $Bond_{\textrm{Coordenação}}$($AgentAmIController$, $AgentAmIController$) -- \{($AgSoftware_1$, $AgSoftware_2$), ($AgSoftware_1$, $AgSoftware_3$), \ldots, ($AgSoftware_1$, $AgSoftware_{Ma}$), ($AgSoftware_2$, $AgSoftware_1$), ($AgSoftware_2$, $AgSoftware_3$), \ldots ($AgSoftware_2$, $AgSoftware_{Mb}$), ($AgSoftware_3$, $AgSoftware_1$), ($AgSoftware_3$, $AgSoftware_2$), \ldots, ($AgSoftware_3$, $AgSoftware_{Mc}$)\} – cada ato de informação do programa $AgSoftware_i$ (papel \textit{Controller}) ao programa $AgSoftware_j$ ($i \neq j$) gera o conhecimento correspondente no programa $AgSoftware_j$;
     \end{itemize}
 
-    \item Communication -- \{($AgSoftware_1$, $AgSoftware_2$), ($AgSoftware_1$, $AgSoftware_3$), \ldots, ($AgSoftware_1$, $AgSoftware_{Ma}$), ($AgSoftware_2$, $AgSoftware_1$), ($AgSoftware_2$, $AgSoftware_3$), \ldots ($AgSoftware_2$, $AgSoftware_{Mb}$), ($AgSoftware_3$, $AgSoftware_1$), ($AgSoftware_3$, $AgSoftware_2$), \ldots, ($AgSoftware_3$, $AgSoftware_{Mc}$)\}
+    \item $Communication$ -- \{($AgSoftware_1$, $AgSoftware_2$), ($AgSoftware_1$, $AgSoftware_3$), \ldots, ($AgSoftware_1$, $AgSoftware_{Ma}$), ($AgSoftware_2$, $AgSoftware_1$), ($AgSoftware_2$, $AgSoftware_3$), \ldots ($AgSoftware_2$, $AgSoftware_{Mb}$), ($AgSoftware_3$, $AgSoftware_1$), ($AgSoftware_3$, $AgSoftware_2$), \ldots, ($AgSoftware_3$, $AgSoftware_{Mc}$)\}
 
 \end{itemize}
 
-Vale ressaltar que o modelo E anterior foi estendido a partir da inserção da relação $Bond_{\textrm{Coordenação}}$($AgentAmIController$, $AgentAmIController$) na família $Bond$ e de outros pares ordenados na relação $Communication$. Com esse novo relacionamento todos os agentes no papel $Controller$ passam a ser capazes de se comunicar, permitindo que exista uma maior cooperação entre eles. Ou seja, além da relação de autoridade entre os agentes no papel $Controller$ que compõem coordenadores e aspiradores, podemos contar também com a relação de coordenação entre os agentes $AgSoftware$ que compõem apenas os Coordenadores.
+\vspace{10px}
 
-A matriz sociométrica descrita na Figura \ref{fig:exp6-matriz-socio}, define o mapa das interações que ocorrem entre os programas de agentes dentro de um mesmo subgrupo e entre os três programas coordenadores em subgrupos diferentes. 
+Vale ressaltar que o modelo E do experimento anterior foi estendido a partir da inserção da relação $Bond_{\textrm{Coordenação}}$($AgentAmIController$, $AgentAmIController$) na família $Bond$ e de outros pares ordenados na relação $Communication$. Com esse novo relacionamento, todos os agentes no papel $Controller$ passam a ser capazes de se comunicar, permitindo que exista uma maior cooperação entre eles. Ou seja, além da relação de autoridade entre os agentes no papel $Controller$ que compõem coordenadores e aspiradores, podemos contar também com a relação de coordenação entre os agentes $AgSoftware$ que compõem apenas os Coordenadores.
+
+A matriz sociométrica descrita na Figura \ref{fig:exp6-matriz-socio} define o mapa das interações que ocorrem entre os programas de agentes dentro de um mesmo subgrupo e entre os três programas coordenadores em subgrupos diferentes. 
 
 
 \begin{figure}[h!]
@@ -991,16 +994,17 @@ A matriz sociométrica descrita na Figura \ref{fig:exp6-matriz-socio}, define o 
     }   
 \end{figure}
 
-Na figura, a tabela menor indica que cada programa $AgAsp_i$ representa um aspirador $i$ do sistema técnico, ou seja, uma agregação de três programas na organização, isto é: $AgHardware_{1i}$, $AgHardware_{2i}$ e $AgSoftware_i$. A tabela maior informa uma baixa frequência de troca de mensagens entre os três coordenadores ($AgAsp_1$, $AgAsp_2$, $AgAsp3$) dos três grupos, uma frequência média entre os coordenadores de cada grupo e os seus coordenados ($AgAsp_1$, \ldots, $AgAsp_{Ma}$; $AgAsp_2$,  \ldots, $AgAsp_{Mb}$; $AgAsp_3$, \ldots, $AgAsp_{Mc}$), e que tanto coordenadores quanto seus coordenados não interagem com os programas representando as pessoas nas três zonas ($AgPessoa_1$, \ldots, $AgPessoa_{Na}$; $AgPessoa{Na+1}$, \ldots, $AgPessoa_{Nb}$; $AgPessoa_{Nb+1}$, \ldots, $AgPessoa_{Nc}$).
+Na figura, a tabela menor indica que cada programa $AgAsp_i$ representa um aspirador $i$ do sistema técnico, ou seja, uma agregação de três programas na organização, isto é: $AgHardware_{1i}$, $AgHardware_{2i}$ e $AgSoftware_i$. A tabela maior informa uma baixa frequência de troca de mensagens entre os três coordenadores ($AgAsp_1$, $AgAsp_2$, $AgAsp3$) dos três grupos, uma frequência média entre os coordenadores de cada grupo e os seus coordenados ($AgAsp_1$, \ldots, $AgAsp_{Ma}$; $AgAsp_2$,  \ldots, $AgAsp_{Mb}$; $AgAsp_3$, \ldots, $AgAsp_{Mc}$), e que tanto coordenadores quanto seus coordenados não interagem com os programas, representando as pessoas nas três zonas ($AgPessoa_1$, \ldots, $AgPessoa_{Na}$; $AgPessoa{Na+1}$, \ldots, $AgPessoa_{Nb}$; $AgPessoa_{Nb+1}$, \ldots, $AgPessoa_{Nc}$).
 
 \subsubsection{Modelo C}
 
 Conforme mencionado, o modelo $C$ foi alterado para acomodar os agentes coordenadores. Esta acomodação implicou na definição do comportamento de cada programa no papel $Controller$ coordenando um dos três grupos ($AgSoftware_1$, $AgSoftware_2$, $AgSoftware_3$), em uma alteração no modelo do comportamento dos outros programas no papel $Controller$ coordenados em um dos grupos ($AgSoftware_4$, \ldots, $AgSoftware_{Na}$, $AgSoftware_{Na+1}$, \ldots, $AgSoftware_{Nb}$, $AgSoftware_{Nb+1}$, \ldots, $AgSoftware_{Nc}$), e no protocolo de interação entre os programas.
 
-Apesar do modelo $F$ não ter sido estendido, as informações sobre os estados do ambiente, percebidas pelos programas no papel \textit{Device} representando sensores, agregam informações a respeito de linhas divisórias entre as zonas compondo o ambiente. Assim, quando recebem estas informações, os programas no papel \textit{Controller} sendo coordenados e coordenadores evitam ultrapassar estas linhas. Entretanto, sempre que precisar, um coordenador pode requisitar a outro coordenador que envie alguns dos aspiradores para a sua zona. Neste caso o coordenador que recebeu a mensagem deve consultar seus coordenados visando descobrir aspiradores disponíveis, os quais devem assimilar a ideia e partir para a zona que requisitou ajuda. 
+Apesar do modelo $F$ não ter sido estendido, as informações sobre os estados do ambiente, percebidas pelos programas no papel \textit{Device} representando sensores, agregam informações a respeito de linhas divisórias entre as zonas compondo o ambiente. Assim, quando recebem estas informações, os programas no papel \textit{Controller} sendo coordenados e coordenadores evitam ultrapassar estas linhas. Entretanto, sempre que precisar, um coordenador pode requisitar a outro coordenador que envie alguns dos aspiradores para a sua zona. Neste caso, o coordenador que recebeu a mensagem deve consultar seus coordenados visando descobrir aspiradores disponíveis, os quais devem assimilar a ideia e partir para a zona que requisitou ajuda. 
 
-A Figura \ref{fig:exp6-protocolo} ilustra o protocolo de interação entre os programas no papel \textit{Controller}. A descrição do processo de comunicação considera um conjunto de seis estados possíveis, $Q = \{q_0, q_1, q_2, q_3, q_4, q_5\}$, em que o estado inicial foi representado por $q_0$. A figura supõe que o processo de conversação envolve um uma família de quatro conjuntos de programas $G = \{C, C_1, C_2, C_3\}$, ou seja: um conjunto de três programas coordenadores $C = \{AgAsp_1, AgAsp_2, AgAsp_3\}$, um conjunto de programas coordenados pelo coordenador $AgAsp_1$ da zona 1, isto é, $C_1 = \{AgAsp_4, \ldots, AgAsp_{Ma}\}$; um conjunto de programas coordenados pelo coordenador $AgAsp_2$ da zona 2, isto é, $C_2 = \{AgAsp_{Ma+1}, \ldots, AgAsp_{Mb}\}$; e um conjunto de programas coordenados pelo coordenador $AgAsp_3$ da zona 3, isto é, $C_3 = \{AgAsp_{Mb+1},  \ldots, AgAsp_{Mc}\}$.
+A Figura \ref{fig:exp6-protocolo} ilustra o protocolo de interação entre os programas no papel \textit{Controller}. A descrição do processo de comunicação considera um conjunto de seis estados possíveis, $Q = \{q_0, q_1, q_2, q_3, q_4, q_5\}$, em que o estado inicial foi representado por $q_0$. A figura supõe que o processo de conversação envolve uma família de quatro conjuntos de programas $G = \{C, C_1, C_2, C_3\}$, ou seja: um conjunto de três programas coordenadores $C = \{AgAsp_1, AgAsp_2, AgAsp_3\}$, um conjunto de programas coordenados pelo coordenador $AgAsp_1$ da zona 1, isto é, $C_1 = \{AgAsp_4, \ldots, AgAsp_{Ma}\}$; um conjunto de programas coordenados pelo coordenador $AgAsp_2$ da zona 2, isto é, $C_2 = \{AgAsp_{Ma+1}, \ldots, AgAsp_{Mb}\}$; e um conjunto de programas coordenados pelo coordenador $AgAsp_3$ da zona 3, isto é, $C_3 = \{AgAsp_{Mb+1},  \ldots, AgAsp_{Mc}\}$.
 
+\clearpage
 \begin{figure}[h!]
     \centering
     \Caption{\label{fig:exp6-protocolo} Protocolo de interação entre os programas na organização.} 
@@ -1011,13 +1015,13 @@ A Figura \ref{fig:exp6-protocolo} ilustra o protocolo de interação entre os pr
     }   
 \end{figure}
 
-De acordo com a relação Communication, o protocolo de interação indica que os programas coordenadores se comunicam entre si e cada um com os programas por ele coordenados. As transições entre os estados $q_0-q_1$ e $q_4-q_5$ correspondem a solicitações envolvendo pelo menos três agentes (\textit{requests to request}), a transição entre os estados $q_1-q_2$ corresponde a uma pergunta (\textit{requests to inform}) envolvendo pelo menos dois agentes. O restante das transições corresponde às mensagens fundamentais para solicitar e informar (\textit{request e inform}) a um outro agente.
+De acordo com a relação $Communication$, o protocolo de interação indica que os programas coordenadores se comunicam entre si e cada um com os programas por ele coordenados. As transições entre os estados $q_0-q_1$ e $q_4-q_5$ correspondem a solicitações envolvendo pelo menos três agentes (\textit{requests to request}), a transição entre os estados $q_1-q_2$ corresponde a uma pergunta (\textit{requests to inform}) envolvendo pelo menos dois agentes. O restante das transições corresponde às mensagens fundamentais para solicitar e informar (\textit{request e inform}) um outro agente.
 
-No instante $t_1$, a partir do estado inicial $q_0$, existem duas possibilidades de transição. Primeiro, qualquer coordenador $s$ no conjunto de coordenadores $C$ pode solicitar que cada coordenador $h_i$ no conjunto $C$ solicite que seus coordenados no conjunto $C_i$ se dirijam à zona do coordenador $s$. No instante $t_2$ o coordenador $h_i$ em C pergunta aos seus coordenados em $C_i$ a respeito de seus estados atuais. No instante $t_3$ um programa $h$ em $C_i$ que está livre, informa este fato ao seu coordenador $h_i$ em $C$. No instante $t_4$ o coordenador $h_i$ solicita que seu coordenado $h$ se dirija à zona do coordenador $s$, o qual solicitou esta ação no instante $t_1$.
+No instante $t_1$, a partir do estado inicial $q_0$, há duas possibilidades de transição. Primeiro, qualquer coordenador $s$ no conjunto de coordenadores $C$ pode solicitar que cada coordenador $h_i$ no conjunto $C$ solicite que seus coordenados no conjunto $C_i$ se dirijam à zona do coordenador $s$. No instante $t_2$, o coordenador $h_i$ em C pergunta aos seus coordenados em $C_i$ a respeito de seus estados atuais. No instante $t_3$, um programa $h$ em $C_i$ que está livre informa este fato ao seu coordenador $h_i$ em $C$. No instante $t_4$, o coordenador $h_i$ solicita que seu coordenado $h$ se dirija à zona do coordenador $s$, o qual solicitou essa ação no instante $t_1$.
 
-Na segunda transição possível no instante $t_1$, um programa coordenado $h$ em um conjunto $C_i$ informa ao seu coordenador $h_i$ em $C$ que está livre. Sendo assim, se em $t_2$ algum coordenador $s$ em $C$ solicitar que o coordenador $h_i$ solicite que seus coordenados se dirijam à zona do coordenador $s$, então em $t_3$ o coordenador $h_i$ poderá solicitar imediatamente que $h$ no conjunto $C_i$ se dirija a zona de $s$, o qual solicitou esta ação no instante $t_2$, depois que $h$ informou que estava livre em $t_1$. 
+Na segunda transição possível no instante $t_1$, um programa coordenado $h$ em um conjunto $C_i$ informa ao seu coordenador $h_i$ em $C$ que está livre. Sendo assim, se em $t_2$ algum coordenador $s$ em $C$ solicitar que o coordenador $h_i$ solicite que seus coordenados se dirijam à zona do coordenador $s$, então, em $t_3$, o coordenador $h_i$ poderá solicitar imediatamente que $h$ no conjunto $C_i$ se dirija à zona de $s$, o qual solicitou esta ação no instante $t_2$, depois que $h$ informou que estava livre em $t_1$. 
 
-A Figura \ref{fig:exp6-protocolo} omitiu a transição para o estão inicial $q_0$ na situação em que os programas coordenados e/ou coordenadores não enviam mensagens de retorno para as solicitações. Por exemplo, depois de $\epsilon$ unidades de tempo, contadas a partir do horário de início da conversação no instante $t_2 (time(t_2))$ até um tempo limite em que uma mensagem de retorno deve ser enviada no instante $t_3 (time(t_3))$, o protocolo deve transitar para o estado inicial, $\delta(q_2, time(t_3) – time(t_2) > \epsilon) = q_0$, em que os programas poderão iniciar novo processo de conversação.
+A Figura \ref{fig:exp6-protocolo} omitiu a transição para o então inicial $q_0$ na situação em que os programas coordenados e/ou coordenadores não enviam mensagens de retorno para as solicitações. Por exemplo, depois de $\epsilon$ unidades de tempo, contadas a partir do horário de início da conversação no instante $t_2 (time(t_2))$ até um tempo limite em que uma mensagem de retorno deve ser enviada no instante $t_3 (time(t_3))$, o protocolo deve transitar para o estado inicial, $\delta(q_2, time(t_3) – time(t_2) > \epsilon) = q_0$, em que os programas poderão iniciar novo processo de conversação.
 
 \subsubsection{Objetos Emergentes}
 
@@ -1025,7 +1029,7 @@ Os objetos emergentes, resultantes das modificações realizadas neste experimen
 
 \begin{figure}[h!]
     \centering
-    \Caption{\label{fig:exp6-perf-utilidade} Utilidade do sistema ni sexto experimento.} 
+    \Caption{\label{fig:exp6-perf-utilidade} Utilidade do sistema no sexto experimento.} 
     \UECEfig{}{
         \includegraphics[width=10cm]{figuras/exp6-perf-utilidade}
     }{
@@ -1033,7 +1037,7 @@ Os objetos emergentes, resultantes das modificações realizadas neste experimen
     }   
 \end{figure}
 
-Conforme podemos observar na Figura \ref{fig:exp6-perf-utilidade}, o desempenho do sistema foi bem inferior aos experimentos anteriores. Isso pode ser atribuído a um fator observado durante a execução. Como tanto os coordenadores quanto os aspiradores tem um espaço de movimento mais limitado, quando eles se posicionam em certas áreas, como nos cantos de suas respectivas zonas, eles tem menos opções de movimento, forçando o agente a seguir por uma direção que pode estar ocupada por algum usuário causando uma colisão com ele.  Como a função associada ao objetivo de evitar incomodar os usuários tem prioridade maior que as outras, o desempenho do sistema é bastante afetado. 
+Conforme podemos observar na Figura \ref{fig:exp6-perf-utilidade}, o desempenho do sistema foi bem inferior aos experimentos anteriores. Isso pode ser atribuído a um fator observado durante a execução. Como tanto os coordenadores quanto os aspiradores têm um espaço de movimento mais limitado, quando eles se posicionam em certas áreas, como nos cantos de suas respectivas zonas, eles têm menos opções de movimento, forçando o agente a seguir por uma direção que pode estar ocupada por algum usuário causando uma colisão com ele. Como a função associada ao objetivo de evitar incomodar os usuários tem prioridade maior que as outras, o desempenho do sistema é bastante afetado. 
 
 \begin{figure}[h!]
     \centering
@@ -1045,29 +1049,29 @@ Conforme podemos observar na Figura \ref{fig:exp6-perf-utilidade}, o desempenho 
     }   
 \end{figure}
 
-Como podemos observar na Figura \ref{fig:exp6-perf-limpeza} acima, não é possível determinar uma diferença significativa entre o desempenho, relacionado a limpeza do ambiente, neste experimento e no observado na Figura \ref{fig:exp5-perf-limpeza}. Isso reforça a hipótese que a baixa performance do objetivo original está relacionada ao objetivo próximo $O_3$.
+Como podemos observar na Figura \ref{fig:exp6-perf-limpeza} acima, não é possível determinar uma diferença significativa entre o desempenho, relacionado à limpeza do ambiente, neste experimento e no observado na Figura \ref{fig:exp5-perf-limpeza}. Isso reforça a hipótese de que a baixa performance do objetivo original está relacionada ao objetivo próximo $O_3$.
 
 \section{Conclusão}
 \label{sec:conclusao}
 
-Neste capítulo foi mostrada a utilização do modelo \acrshort{fec}, elaborado no capítulo \ref{cap:abordagem}, para uma aplicação de sistemas de inteligência ambiental. Para construir o modelo dessa aplicação foi utilizada uma abordagem incremental, inserindo novos elementos no sistema a cada experimento e, consequentemente, aumentando sua complexidade. Cada um dos experimentos gera um conjunto de dados que são utilizados para avaliar o modelo construído para o sistema. 
-A aplicação utilizada para o teste desse modelo tem como base o experimento clássico do aspirador de pó. Ela consiste em um sistema de inteligência ambiental onde um conjunto de agentes aspiradores de pó deve manter limpo um ambiente onde circulam grupos de pessoas. O objetivo desse sistema \acrshort{ami} é manter o ambiente limpo, minimizando os custos de energia e evitando atrapalhar as pessoas que estão passando.
+Neste capítulo, foi mostrada a utilização do modelo \acrshort{fec}, elaborado no capítulo \ref{cap:abordagem}, para uma aplicação de sistemas de inteligência ambiental. Para construir o modelo dessa aplicação foi utilizada uma abordagem incremental, inserindo novos elementos no sistema a cada experimento e, consequentemente, aumentando sua complexidade. Cada um dos experimentos gera um conjunto de dados que são utilizados para avaliar o modelo construído para o sistema. 
+A aplicação utilizada para o teste desse modelo tem como base o experimento clássico do aspirador de pó. Ela consiste em um sistema de inteligência ambiental, onde um conjunto de agentes aspiradores de pó deve manter limpo um ambiente em que circulam grupos de pessoas. O objetivo desse sistema \acrshort{ami} é manter o ambiente limpo, minimizando os custos de energia e evitando atrapalhar as pessoas que estão passando.
 
 No primeiro experimento realizado, a aplicação é simulada em um ambiente estático contendo apenas um agente aspirador. O intuito deste experimento é verificar se o modelo gerado para o agente aspirador é capaz de cumprir um dos objetivos da aplicação, limpar o ambiente, e validar o modelo de função gerado para esse objetivo. 
 
 O segundo experimento também tem como objetivo observar o comportamento do agente e de seu modelo de função, mas dessa vez em um condições diferentes. O agente aspirador único é mantido na aplicação, porém, o ambiente de aplicação se torna dinâmico. Ou seja, o próprio programa de ambiente passa a inserir sujeira no ambiente. Além disso, o agente aspirador passa a apresentar falhas em seu atuador, perdendo sua característica determinística.
 
-O terceiro experimento mantém as novas características do ambiente e do agente aspirador, e adiciona um novo elemento a simulação, o agente usuário. Neste experimento são observadas as medidas extraídas, a partir do modelo de função atualizado, da simulação em função da quantidade de pessoas no ambiente.
+O terceiro experimento mantém as novas características do ambiente e do agente aspirador e adiciona um novo elemento à simulação, o agente usuário. Neste experimento são observadas as medidas extraídas, a partir do modelo de função atualizado, da simulação em função da quantidade de pessoas no ambiente.
 
-No quarto experimento passamos observar na simulação um ambiente contendo dois ou mais agentes aspiradores. Nele são extraídas medidas de três situações diferentes, na primeira são observadas as medidas em um ambiente contendo três aspiradores, na segunda passam a ser seis, e na terceira uma dúzia de aspiradores. 
+No quarto experimento, passamos a observar na simulação um ambiente contendo dois ou mais agentes aspiradores. Nele são extraídas medidas de três situações diferentes: na primeira são observadas as medidas em um ambiente contendo três aspiradores, na segunda passam a ser seis, e na terceira uma dúzia de aspiradores. 
 
-O quinto experimento adiciona um novo agente a aplicação chamado agente coordenador. Com esse novo elemento a aplicação passa a apresentar características organizacionais mais complexas e novos elementos de cooperação. Isso gera mudanças mais profundas nos modelos de estrutura e comportamento definidos anteriormente, além de refletir nas medidas obtidas através do modelo de função.
+O quinto experimento adiciona um novo agente à aplicação, chamado de "agente coordenador". Com esse novo elemento, a aplicação passa a apresentar características organizacionais mais complexas e novos elementos de cooperação. Isso gera mudanças mais profundas nos modelos de estrutura e comportamento definidos anteriormente, além de refletir nas medidas obtidas através do modelo de função.
 
-Finalmente, o sexto experimento divide o ambiente da aplicação em três partes, onde cada uma dessas partes contém um agente coordenador que gerencia os aspiradores da sua zona.  Ambos os experimentos cinco e seis são realizados em condições semelhantes às do quarto experimento, examinando diferentes situações do ambiente em função da quantidade de pessoas que passam por ele. 
+Finalmente, o sexto experimento divide o ambiente da aplicação em três partes, onde cada uma dessas partes contém um agente coordenador que gerencia os aspiradores da sua zona. Ambos os experimentos, cinco e seis, são realizados em condições semelhantes às do quarto experimento, examinando diferentes situações do ambiente em função da quantidade de pessoas que passam por ele. 
 
-Para simplificar a apresentação dos experimentos, foram omitidas algumas características dos modelos \acrshort{fec} que se mantinham de um experimento para outro. Em cada experimento foram geradas duas distribuições, uma contendo as medidas associadas ao modelo de função, caracterizando o desempenho da aplicação em relação aos objetivos do sistema, e outra ilustrando especificamente a performance do sistema em relação a limpeza do ambiente. Essas distribuições extraídas da simulação permitem que o desenvolvedor possa observar características do sistema antes de iniciar sua implantação no mundo real.
+Para simplificar a apresentação dos experimentos, foram omitidas algumas características dos modelos \acrshort{fec} que se mantinham de um experimento para outro. Em cada experimento foram geradas duas distribuições, uma contendo as medidas associadas ao modelo de função, caracterizando o desempenho da aplicação em relação aos objetivos do sistema, e outra ilustrando especificamente a performance do sistema em relação à limpeza do ambiente. Essas distribuições extraídas da simulação permitem que o desenvolvedor possa observar características do sistema antes de iniciar sua implantação no mundo real.
 
-Neste trabalho, os experimentos foram realizados com o objetivo de validar o modelo \acrshort{fec} proposto, cada um dos experimentos apresenta evoluções no modelo relacionadas a inserção de realidade no sistema \acrshort{ami}. As representações geradas na simulação a partir dos modelos foram aceitáveis. Expondo características do sistema que não poderiam ser observadas antes de sua construção. Isso pode ser observado principalmente nos três últimos experimentos, onde podemos notar que as mudanças de comportamento e estrutura propostas no sistema não são capazes de gerar ganhos significativos de acordo com o modelo de Função adotado.
+Neste trabalho, os experimentos foram realizados com o objetivo de validar o modelo \acrshort{fec} proposto, cada um dos experimentos apresenta evoluções no modelo relacionadas à inserção de realidade no sistema \acrshort{ami}. As representações geradas na simulação a partir dos modelos foram aceitáveis, expondo características do sistema que não poderiam ser observadas antes de sua construção. Isso pode ser observado principalmente nos três últimos experimentos, onde podemos notar que as mudanças de comportamento e estrutura propostas no sistema não são capazes de gerar ganhos significativos de acordo com o modelo de Função adotado.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
